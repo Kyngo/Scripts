@@ -21,26 +21,7 @@ apt install /tmp/discord.deb -yyq
 # OS SELF UPDATE SCRIPT #
 #########################
 
-cat > /usr/bin/update << EOF
-#!/bin/bash
-if [ $EUID -ne 0 ]
-then
-    echo "Not running as root - exiting."
-    exit 1
-fi
-sudo snap refresh
-sudo apt --fix-broken install
-sudo dpkg --configure -a
-sudo apt update
-sudo apt upgrade -yyq
-sudo apt autoremove -yyq
-sudo apt purge -yyq
-sudo update-grub2
-
-if [ -f /var/run/reboot-required ]; then
-  echo "The system needs to reboot! Do it ASAP."
-fi
-EOF
+cp "$( dirname -- "$0"; )/update.sh" /usr/bin/update
 chmod +x /usr/bin/update
 update
 
