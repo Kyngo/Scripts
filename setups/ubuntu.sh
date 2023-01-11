@@ -33,7 +33,7 @@ PKGS=(
     "python3" "code" "google-chrome-browser" "docker.io" "docker-compose" "zip" "unzip" "virtualenv" "php7.4"
     "php7.4-gd" "php7.4-mbstring" "php7.4-zip" "php7.4-xml" "php7.4-json" "php7.4-mysqli" "build-essential" "jq"
     "php8.0-gd" "php8.0-mbstring" "php8.0-zip" "php8.0-xml" "php8.0-mysqli" "php8.1" "php8.1-fpm" "php8.1-gd"
-    "php8.1-mbstring" "php8.1-zip" "php8.1-xml" "php8.1-mysqli" "apache2" "libapache2-mod-php7.4" "golang"
+    "php8.1-mbstring" "php8.1-zip" "php8.1-xml" "php8.1-mysqli" "apache2" "libapache2-mod-php7.4" "golang" "yakuake"
     "libapache2-mod-php8.0" "traceroute" "telegram-desktop" "gitweb" "lighttpd" "nmap" "gparted" "zsh" "htop"
 )
 
