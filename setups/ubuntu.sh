@@ -43,7 +43,7 @@ do
 done
 
 SNAPS=(
-    "postman" "mysql-workbench-community" "pycharm-community --classic"
+    "postman" "mysql-workbench-community" "pycharm-community --classic" "spotify"
 )
 for i in ${SNAPS[@]}
 do
