@@ -16,6 +16,15 @@ apt install /tmp/dbeaver.deb -yyq
 # Discord
 wget https://discord.com/api/download/stable\?platform\=linux\&format\=deb -O /tmp/discord.deb
 apt install /tmp/discord.deb -yyq
+# Chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
+apt install /tmp/chrome.deb -yyq
+# VSCode
+wget https://code.visualstudio.com/sha/download?build=stable\&os=linux-deb-x64 -O /tmp/vscode.deb
+apt install /tmp/vscode.deb -yyq
+# MS Edge
+wget https://go.microsoft.com/fwlink?linkid=2149051&brand=M102 -O /tmp/ms-edge.deb
+apt install /tmp/ms-edge.deb -yyq
 
 #########################
 # OS SELF UPDATE SCRIPT #
@@ -30,11 +39,9 @@ update
 ###################################
 
 PKGS=(
-    "python3" "code" "google-chrome-browser" "docker.io" "docker-compose" "zip" "unzip" "virtualenv" "php7.4"
-    "php7.4-gd" "php7.4-mbstring" "php7.4-zip" "php7.4-xml" "php7.4-json" "php7.4-mysqli" "build-essential" "jq"
-    "php8.0-gd" "php8.0-mbstring" "php8.0-zip" "php8.0-xml" "php8.0-mysqli" "php8.1" "php8.1-fpm" "php8.1-gd"
-    "php8.1-mbstring" "php8.1-zip" "php8.1-xml" "php8.1-mysqli" "apache2" "libapache2-mod-php7.4" "golang" "yakuake"
-    "libapache2-mod-php8.0" "traceroute" "telegram-desktop" "gitweb" "lighttpd" "nmap" "gparted" "zsh" "htop"
+    "python3" "docker.io" "docker-compose" "zip" "unzip" "virtualenv" "build-essential" "jq"
+    "golang" "yakuake" "traceroute" "telegram-desktop" "lighttpd" "nmap" "gparted" "zsh" 
+    "htop" "curl"
 )
 
 for i in ${PKGS[@]}
@@ -56,10 +63,13 @@ done
 
 # NVM
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 # Poetry
 curl -sSL https://install.python-poetry.org | python3 -
 # SPHP
-wget https://gist.githubusercontent.com/Kyngo/96f4f9ae48e98fa6d167f4d954f1eab0/raw/81e1b8b3dcb79ca13b6a402a2061a44b372a6261/sphp.sh > /usr/bin/sphp
+wget https://gist.githubusercontent.com/Kyngo/96f4f9ae48e98fa6d167f4d954f1eab0/raw/81e1b8b3dcb79ca13b6a402a2061a44b372a6261/sphp.sh  -O /usr/bin/sphp
 chmod +x /usr/bin/sphp
 
 # Installing Node.js versions
