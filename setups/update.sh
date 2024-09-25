@@ -88,9 +88,9 @@ do_install() {
     echo "Script is already installed!"
     exit 0
   fi
-  chmod +x $0
   cp $0 /usr/bin/update > /dev/null 2>&1
   if [[ $? -eq 0 ]]; then
+    chmod +x /usr/bin/update
     echo "Script installed successfully!"
   else
     echo "Failed to install the script!"
